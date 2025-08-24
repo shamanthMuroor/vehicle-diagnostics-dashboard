@@ -8,7 +8,7 @@ body {
   }
   
   .container {
-    max-width: 900px;
+    max-width: 70%;
     margin: 50px auto;
     padding: 20px;
     background: #ffffff;
@@ -61,7 +61,6 @@ body {
   }
   
   #charts {
-    margin: 2rem auto;
     width: 80%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

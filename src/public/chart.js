@@ -1,4 +1,6 @@
 const speedCtx = document.getElementById('speedChart').getContext('2d');
+const rpmCtx = document.getElementById('rpmChart').getContext('2d');
+const tempCtx = document.getElementById('tempChart').getContext('2d');
 
 const createChart = (ctx, label, color) => new Chart(ctx, {
     type: 'line',
@@ -23,6 +25,8 @@ const createChart = (ctx, label, color) => new Chart(ctx, {
 
   
 const speedChart = createChart(speedCtx, "Speed (km/h)", "blue");
+const rpmChart = createChart(rpmCtx, "RPM", "green");
+const tempChart = createChart(tempCtx, "Temperature (°C)", "red");
 
 // === Fetch latest data and update charts ===
 async function updateCharts() {
@@ -36,9 +40,15 @@ async function updateCharts() {
       // push new data
       speedChart.data.labels.push(time);
       speedChart.data.datasets[0].data.push(data.speed);
+
+      rpmChart.data.labels.push(time);
+      rpmChart.data.datasets[0].data.push(data.rpm);
+  
+      tempChart.data.labels.push(time);
+      tempChart.data.datasets[0].data.push(data.temperature);
   
       // keep only last 10 data points
-      [speedChart].forEach(chart => {
+      [speedChart, rpmChart, tempChart].forEach(chart => {
         if (chart.data.labels.length > 10) {
           chart.data.labels.shift();
           chart.data.datasets[0].data.shift();
