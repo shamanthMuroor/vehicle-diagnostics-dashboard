@@ -30,6 +30,8 @@ The goal is to simulate how a vehicle’s Electronic Control Unit (ECU) might pr
 ---
 
 ## 📂 Project Structure
+
+```plaintext
 vehicle-diagnostics-dashboard/
 │── src/ 
 │   ├── public/                # frontend
