@@ -25,12 +25,12 @@ function renderHistory(dataArray) {
 // Fetch data from API
 async function fetchData() {
     try {
-        const latestDataResponse = await fetch("http://localhost:3000/vehicle/data");
+        const latestDataResponse = await fetch("http://localhost:3000/api/vehicle/data");
         const latestVehicleData = await latestDataResponse.json();
         renderLatestData(latestVehicleData);
 
         //Fetch history
-        const historyResponse = await fetch("http://localhost:3000/vehicle/history");
+        const historyResponse = await fetch("http://localhost:3000/api/vehicle/history");
         const historyData = await historyResponse.json();
         renderHistory(historyData);
     } catch (err) {
