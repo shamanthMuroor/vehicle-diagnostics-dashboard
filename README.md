@@ -30,3 +30,21 @@ The goal is to simulate how a vehicle’s Electronic Control Unit (ECU) might pr
 ---
 
 ## 📂 Project Structure
+vehicle-diagnostics-dashboard/
+│── src/ 
+│   ├── public/                # frontend
+│   │   ├── index.html         # main page
+│   │   ├── style.css          # styling
+│   │   ├── chart.js           # chart logic
+│   │   └── script.js          # frontend logic (fetch)
+│   │
+│   ├── backend/
+│   │   ├── models/            # vehicle data model
+│   │   │   └── vehicleData.js
+│   │   ├── simulators/
+│   │   │   └── simulator.js
+│   │   ├── server.js          # backend with APIs
+│   │   └── package.json       
+│   └── package.json
+│── README.md                  # Project documentation
+│── .gitignore                 # File to ignore contents
